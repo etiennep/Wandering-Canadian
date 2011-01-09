@@ -1,13 +1,7 @@
 package com.hellomvp.client;
 
-import com.google.gwt.event.shared.EventBus;
-import com.google.gwt.event.shared.SimpleEventBus;
 import com.google.gwt.inject.client.AbstractGinModule;
-import com.google.gwt.place.shared.PlaceHistoryMapper;
-import com.google.inject.Singleton;
 import com.hellomvp.client.activity.ActivityModule;
-import com.hellomvp.client.mvp.AppActivityMapper;
-import com.hellomvp.client.mvp.AppPlaceHistoryMapper;
 import com.hellomvp.client.mvp.MvpModule;
 import com.hellomvp.client.ui.MainView;
 import com.hellomvp.client.ui.ViewModule;

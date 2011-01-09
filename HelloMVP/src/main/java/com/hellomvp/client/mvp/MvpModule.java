@@ -12,19 +12,15 @@
  **/
 package com.hellomvp.client.mvp;
 
-import com.google.gwt.activity.shared.ActivityManager;
-import com.google.gwt.activity.shared.ActivityMapper;
 import com.google.gwt.event.shared.EventBus;
 import com.google.gwt.event.shared.SimpleEventBus;
 import com.google.gwt.inject.client.AbstractGinModule;
 import com.google.gwt.place.shared.PlaceController;
 import com.google.gwt.place.shared.PlaceHistoryHandler;
 import com.google.gwt.place.shared.PlaceHistoryMapper;
-import com.google.gwt.user.client.ui.SimplePanel;
 import com.google.inject.Provides;
 import com.google.inject.Singleton;
 import com.hellomvp.client.place.HelloPlace;
-import com.hellomvp.client.ui.ViewModule;
 
 /**
  *
@@ -39,6 +35,7 @@ public class MvpModule extends AbstractGinModule {
    */
   @Override
   protected void configure() {
+    
     bind(EventBus.class).to(SimpleEventBus.class).in(Singleton.class);
     // PlaceHistoryMapper instantiate new places based on the browser URL. You
     // only need one of those for the entire app.
@@ -83,27 +80,7 @@ public class MvpModule extends AbstractGinModule {
     return new PlaceController(eventBus);
   }
 
-  /**
-   * Creates a new ActivityManager. You should create one of these for each
-   * display area. Use annotations to differentiate them. The ActivityManager
-   * listens to PlaceChangeEvents, uses the ActivityMapper to figure out what
-   * activity to instantiate based on the place and manages the general
-   * activity lifecycle. 
-   * 
-   * @param mapper the ActivityMapper used to instantiate new Activity objects.
-   * @param eventBus the event bus
-   * @param display the display area.
-   * @return
-   */
-  @Provides
-  @Singleton
-  public ActivityManager getActivityManager(ActivityMapper mapper, 
-                                            EventBus eventBus,
-                                            SimplePanel display) {
-    ActivityManager activityManager = new ActivityManager(mapper, eventBus);
-    activityManager.setDisplay(display);
-    return activityManager;
-  }
+  
 
   
 }
