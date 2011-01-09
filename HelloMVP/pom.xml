@@ -6,45 +6,50 @@
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<name>Hello MVP With Gin</name>
+	<properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+	</properties>
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>2.1</version>
+				<version>2.3.2</version>
 				<configuration>
 					<source>1.6</source>
 					<target>1.6</target>
+					<encoding>${project.build.sourceEncoding}</encoding>
 				</configuration>
 			</plugin>
-			 <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>gwt-maven-plugin</artifactId>
-        <version>2.1.0-1</version>
-        <dependencies>
-          <dependency>
-            <groupId>com.google.gwt</groupId>
-            <artifactId>gwt-user</artifactId>
-            <version>2.1.1</version>          
-            </dependency>
-          <dependency>
-            <groupId>com.google.gwt</groupId>
-            <artifactId>gwt-dev</artifactId>            
-            <version>2.1.1</version>
-          </dependency>
-        </dependencies>
-			  <configuration>
-          <logLevel>INFO</logLevel>
-          <style>PRETTY</style>
-         <modules>
-            <module>com.hellomvp.HelloMVP</module>
-         </modules>
-          <runTarget>/hellomvp.html</runTarget>
-          <runClasspathExcludes>
-            <runClasspathExclude>asm-3.3.jar</runClasspathExclude>
-          </runClasspathExcludes>
-			 </configuration>
-			 </plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>gwt-maven-plugin</artifactId>
+				<version>2.1.0-1</version>
+				<dependencies>
+					<dependency>
+						<groupId>com.google.gwt</groupId>
+						<artifactId>gwt-user</artifactId>
+						<version>2.1.1</version>
+					</dependency>
+					<dependency>
+						<groupId>com.google.gwt</groupId>
+						<artifactId>gwt-dev</artifactId>
+						<version>2.1.1</version>
+					</dependency>
+				</dependencies>
+				<configuration>
+					<logLevel>INFO</logLevel>
+					<style>PRETTY</style>
+					<modules>
+						<module>com.hellomvp.HelloMVP</module>
+					</modules>
+					<runTarget>/hellomvp.html</runTarget>
+					<runClasspathExcludes>
+						<runClasspathExclude>asm-3.3.jar</runClasspathExclude>
+					</runClasspathExcludes>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 	<dependencies>
@@ -59,10 +64,10 @@
 			<artifactId>gwt-user</artifactId>
 			<version>2.1.1</version>
 		</dependency>
-  	<dependency>
-		<groupId>com.googlecode.gwt.inject</groupId>
-		<artifactId>gin</artifactId>
-		<version>1.0</version>
-	</dependency>
-</dependencies>
+		<dependency>
+			<groupId>com.googlecode.gwt.inject</groupId>
+			<artifactId>gin</artifactId>
+			<version>1.0</version>
+		</dependency>
+	</dependencies>
 </project>
