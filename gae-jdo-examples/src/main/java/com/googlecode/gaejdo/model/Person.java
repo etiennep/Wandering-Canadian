@@ -27,7 +27,7 @@ import javax.jdo.annotations.VersionStrategy;
 @PersistenceCapable(identityType = IdentityType.APPLICATION)
 @Version(strategy = VersionStrategy.VERSION_NUMBER, column = "VERSION", 
          extensions = { @Extension(vendorName = "datanucleus", key = "field-name", value = "version") })
-@FetchGroups( { @FetchGroup(name = "findWithWithAddresses", members = {
+@FetchGroups( { @FetchGroup(name = "findWithAddresses", members = {
       @Persistent(name = "addresses") }) })    
 public class Person implements Serializable {
 
