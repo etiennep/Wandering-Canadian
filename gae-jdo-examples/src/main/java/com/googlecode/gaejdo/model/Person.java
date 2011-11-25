@@ -1,12 +1,3 @@
-/**
- *
- * Copyright (c) 2011 Try Catch Software, LLC.
- * All Rights Reserved.
- *
- * This software is the confidential and proprietary information of
- * Try Catch Software, LLC.
- *
- */
 package com.googlecode.gaejdo.model;
 
 import java.io.Serializable;
